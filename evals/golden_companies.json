@@ -1,0 +1,170 @@
+{
+  "_note": "Name or ticker -> expected CIK. 'null' means the server SHOULD refuse: the query is genuinely ambiguous or not an SEC registrant, and a confident wrong answer is worse than asking again.",
+  "cases": [
+    {
+      "query": "AAPL",
+      "cik": "0000320193"
+    },
+    {
+      "query": "Apple",
+      "cik": "0000320193"
+    },
+    {
+      "query": "Apple Inc.",
+      "cik": "0000320193"
+    },
+    {
+      "query": "apple computer",
+      "cik": "0000320193"
+    },
+    {
+      "query": "MSFT",
+      "cik": "0000789019"
+    },
+    {
+      "query": "Microsoft",
+      "cik": "0000789019"
+    },
+    {
+      "query": "microsoft corporation",
+      "cik": "0000789019"
+    },
+    {
+      "query": "NVDA",
+      "cik": "0001045810"
+    },
+    {
+      "query": "Nvidia",
+      "cik": "0001045810"
+    },
+    {
+      "query": "NVIDIA Corp",
+      "cik": "0001045810"
+    },
+    {
+      "query": "Alphabet",
+      "cik": "0001652044"
+    },
+    {
+      "query": "GOOGL",
+      "cik": "0001652044"
+    },
+    {
+      "query": "Tesla",
+      "cik": "0001318605"
+    },
+    {
+      "query": "Tesla, Inc.",
+      "cik": "0001318605"
+    },
+    {
+      "query": "TSLA",
+      "cik": "0001318605"
+    },
+    {
+      "query": "Amazon",
+      "cik": "0001018724"
+    },
+    {
+      "query": "AMZN",
+      "cik": "0001018724"
+    },
+    {
+      "query": "Meta Platforms",
+      "cik": "0001326801"
+    },
+    {
+      "query": "JPMorgan Chase",
+      "cik": "0000019617"
+    },
+    {
+      "query": "JPM",
+      "cik": "0000019617"
+    },
+    {
+      "query": "Goldman Sachs",
+      "cik": "0000886982"
+    },
+    {
+      "query": "Berkshire Hathaway",
+      "cik": "0001067983"
+    },
+    {
+      "query": "BRK-B",
+      "cik": "0001067983"
+    },
+    {
+      "query": "Procter & Gamble",
+      "cik": "0000080424"
+    },
+    {
+      "query": "proctor and gamble",
+      "cik": "0000080424"
+    },
+    {
+      "query": "3M",
+      "cik": "0000066740"
+    },
+    {
+      "query": "Coca-Cola",
+      "cik": "0000021344"
+    },
+    {
+      "query": "Walmart",
+      "cik": "0000104169"
+    },
+    {
+      "query": "Costco Wholesale",
+      "cik": "0000909832"
+    },
+    {
+      "query": "Exxon Mobil",
+      "cik": [
+        "0000034088",
+        "0002115436"
+      ],
+      "note": "holdco/opco split: XOM ticker sits on the holdco, 10-K on the opco"
+    },
+    {
+      "query": "Johnson & Johnson",
+      "cik": "0000200406"
+    },
+    {
+      "query": "Netflix",
+      "cik": "0001065280"
+    },
+    {
+      "query": "NFLX",
+      "cik": "0001065280"
+    },
+    {
+      "query": "Intel",
+      "cik": "0000050863"
+    },
+    {
+      "query": "Salesforce",
+      "cik": "0001108524"
+    },
+    {
+      "query": "bank",
+      "cik": null
+    },
+    {
+      "query": "capital",
+      "cik": null
+    },
+    {
+      "query": "holdings",
+      "cik": null
+    },
+    {
+      "query": "Stripe",
+      "cik": null
+    },
+    {
+      "query": "zzzznotarealcompany",
+      "cik": null
+    }
+  ],
+  "_note2": "Some cases accept several CIKs. Holding-company reorganizations split a familiar name across two registrants: the holdco carries the ticker, the opco keeps filing the 10-K. Both are defensible answers to the bare name, so the eval accepts either and the server's list_filings error tells the caller which forms exist."
+}

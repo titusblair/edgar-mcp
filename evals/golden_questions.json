@@ -1,0 +1,21 @@
+{
+  "_note": "A real question -> the 10-K section that answers it. Tests whether section extraction produces text a retriever can actually find the answer in. Terms are the words a correct answer would contain.",
+  "filings": [
+    {"company": "AAPL", "accession": "0000320193-25-000079"}
+  ],
+  "cases": [
+    {"question": "What products does the company sell?", "section": "business", "terms": ["iphone", "mac", "ipad", "services"]},
+    {"question": "How many employees does it have?", "section": "business", "terms": ["employees", "full-time"]},
+    {"question": "What could go wrong with the supply chain?", "section": "risk_factors", "terms": ["supply", "manufacturing", "single source"]},
+    {"question": "What competitive pressures does management worry about?", "section": "risk_factors", "terms": ["competition", "competitive", "price"]},
+    {"question": "What legal or regulatory risk is disclosed?", "section": "risk_factors", "terms": ["regulatory", "laws", "antitrust"]},
+    {"question": "Is the company exposed to a single large customer or region?", "section": "risk_factors", "terms": ["china", "international", "concentration"]},
+    {"question": "What properties or facilities does it hold?", "section": "properties", "terms": ["facilities", "properties"]},
+    {"question": "What lawsuits is the company involved in?", "section": "legal_proceedings", "terms": ["legal proceedings", "court", "litigation"]},
+    {"question": "How did revenue change year over year and why?", "section": "mdna", "terms": ["net sales", "increase", "compared"]},
+    {"question": "What does management say about gross margin?", "section": "mdna", "terms": ["gross margin"]},
+    {"question": "What is the interest rate or currency exposure?", "section": "market_risk", "terms": ["interest rate", "foreign currency"]},
+    {"question": "Were internal controls effective?", "section": "controls", "terms": ["internal control", "effective"]},
+    {"question": "What is the dividend or buyback activity?", "section": "market_for_stock", "terms": ["repurchase", "shareholders"]}
+  ]
+}
